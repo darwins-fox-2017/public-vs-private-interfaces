@@ -12,17 +12,18 @@ class BankAccount {
 
   get account_number () {
     return this._acct_number
-    //
   }
 
   to_string () {
-    //
     console.log(`${this._customer_name}: ${this._type}# ${this._acct_number}`);
     return `${this._customer_name}: ${this._type}# ${this._acct_number}`
   }
 
   cover_digits () {
-    //
+    let pattern = /(\d{3})\-(\d{3})/gi
+    let res = this._acct_number.replace(pattern, "XXX-XXX")
+    console.log(`${this._customer_name}: ${this._type}# ${res}`);
+    return `${this._customer_name}: ${this._type}# ${res}`
   }
 }
 

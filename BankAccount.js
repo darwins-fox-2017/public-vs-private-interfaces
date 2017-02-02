@@ -4,7 +4,7 @@ const ACCT_NUMBER = new WeakMap()
 
 class BankAccount {
   constructor (customer_name, type, acct_number) {
-    this._customerName = customer_name;
+    this.customerName = customer_name;
     this._typeAccount = type;
     this._noRek = acct_number;
   }
@@ -14,14 +14,14 @@ class BankAccount {
   }
 
   to_string () {
-    let hasilString = this._customerName + " : " + this._typeAccount + "# " + this._noRek;
+    let hasilString = this.customerName + " : " + this._typeAccount + "# " + this._noRek;
     console.log(hasilString);
   }
 
   cover_digits () {
-    // let angkaHide = string.replace(/\d{3}-\d{2}/gi, 'XXX-XX');
+    // let angkaHide = this.noRek.replace(/\d{3}-\d{2}/gi, 'XXX-XX');
     let polaRegex = this._noRek.replace(/\d{3}-\d{3}/gi, 'XXX-XXX');
-    let hasilString = this._customerName + " : " + this._typeAccount + "# " + polaRegex;
+    let hasilString = this.customerName + " : " + this._typeAccount + "# " + polaRegex;
     console.log(hasilString);
   }
 }

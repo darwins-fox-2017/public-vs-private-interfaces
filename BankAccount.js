@@ -4,19 +4,24 @@ const ACCT_NUMBER = new WeakMap()
 
 class BankAccount {
   constructor (customer_name, type, acct_number) {
-    //
+    this.customer_name=customer_name;
+    this.type=type;
+    this._acct_number=acct_number;
   }
 
-  get account_number () {
-    //
+  getaccount_number () {
+        return this._acct_number
   }
 
   to_string () {
-    //
+    return this.customer_name + ': ' +this.type +' ' +this._acct_number;
   }
 
   cover_digits () {
-    //
+      let regex=/(\d{3})-(\d{3})/gi;
+      let dataacct=this.customer_name + ': ' +this.type +' ' +this._acct_number;
+      let output=dataacct.replace(regex,'XXX-XXX')
+      return output;
   }
 }
 
@@ -26,7 +31,8 @@ console.log(my_acct)
 console.log(my_acct.account_number)
 
 // release 0
-my_acct.to_string() // "Hacktivate: Checking# 333-555-888"
+console.log(my_acct.to_string()); // "Hacktivate: Checking# 333-555-888"
 
 // release 1
-my_acct.cover_digits() // "Hacktivate: Checking# ***-***-888"
+console.log(my_acct.cover_digits()); // "Hacktivate: Checking# ***-***-888"
+//console.log(my_acct.getaccount_number ());

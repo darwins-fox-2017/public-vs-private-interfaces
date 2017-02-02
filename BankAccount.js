@@ -1,22 +1,26 @@
 'use strict'
 
-const ACCT_NUMBER = new WeakMap()
+// const ACCT_NUMBER = new WeakMap()
 
 class BankAccount {
-  constructor (customer_name, type, acct_number) {
-    //
+  constructor (costumer_name, type, acct_number) {
+    this._costumerName = costumer_name
+    this._type = type
+    this._acc_number = acct_number
   }
 
   get account_number () {
-    //
+    return this._acc_number
   }
 
   to_string () {
-    //
+    console.log(`${this._costumerName}: ${this._type}# ${this._acc_number}`)
   }
 
   cover_digits () {
-    //
+    let pattern = /(\d{3}.??){2}/g
+    this._acc_number = this._acc_number.replace(pattern,`XXX-XXX`)
+    console.log(`${this._costumerName}: ${this._type}# ${this._acc_number}`)
   }
 }
 

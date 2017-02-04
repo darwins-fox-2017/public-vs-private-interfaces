@@ -9,8 +9,28 @@ class BankAccount {
     this._acc_number = acct_number
   }
 
-  get account_number () {
+  get accountNumber () {
     return this._acc_number
+  }
+
+  get type () {
+    return this._type
+  }
+
+  get accountNumber () {
+    return this._acc_number
+  }
+
+  set newCustumerName(costumerName){
+    this._costumerName = costumerName
+  }
+
+  set newType(type){
+    this._type = type
+  }
+
+  set newAccountNum(acct_number){
+    this._acc_number = acct_number
   }
 
   to_string () {

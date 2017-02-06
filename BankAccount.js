@@ -12,7 +12,7 @@ class BankAccount {
 
   set customer_name (name) {
     this._customer_name = name
-  }  
+  }
 
   get customer_name () {
     return this._customer_name
@@ -25,7 +25,7 @@ class BankAccount {
   get type () {
     return this._type
   }
-  
+
   set account_number (acc) {
     this._account_number = acc
   }
@@ -41,7 +41,9 @@ class BankAccount {
   }
 
   cover_digits () {
-    //
+    let pattern = /(\d{3}.??){2}/g
+    this._acc_number = this._account_number.replace(pattern,`XXX-XXX`)
+    console.log(`${this._customer_name}: ${this._type}# ${this._acc_number}`)
   }
 }
 
